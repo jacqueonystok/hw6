@@ -10,7 +10,7 @@ Partial Class Default2
 
     Protected Sub pbsearchtb_TextChanged(sender As Object, e As EventArgs) Handles pbsearchtb.TextChanged
         Dim searchWord As String
-        searchWord = "select * from Alcohol where (AlcoholName like '%" + Searchtb.Text.ToString() + "%')"
+        searchWord = "select * from Alcohol where (AlcoholName like '%" + pbsearchtb.Text.ToString() + "%')"
         SqlDataSource1.SelectCommand = searchWord
     End Sub
 End Class

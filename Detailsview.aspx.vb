@@ -10,7 +10,7 @@ Partial Class Default2
         Response.Write("</span> has been deleted from the database. ")
 
 
-        Response.AddHeader("Refresh", "5;URL=./default.aspx")
+        Response.AddHeader("Refresh", "4;URL=./default.aspx")
     End Sub
 
     Protected Sub DetailsView1_ItemUpdated(sender As Object, e As DetailsViewUpdatedEventArgs) Handles DetailsView1.ItemUpdated

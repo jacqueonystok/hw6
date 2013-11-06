@@ -8,7 +8,7 @@
    <h3> Detailed Information</h3>
 
       Warning!! When Editing Content Of Alcohol do not include the % sign!<br />
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:alcohol %>" DeleteCommand="DELETE FROM [Alcohol] WHERE [AlcoholID] = @AlcoholID" InsertCommand="INSERT INTO [Alcohol] ([AlcoholName], [ContentORProof], [Color], [CocktailUse], [TypeOfDrunk], [AvgPrice]) VALUES (@AlcoholName, @ContentORProof, @Color, @CocktailUse, @TypeOfDrunk, @AvgPrice)" SelectCommand="SELECT * FROM [Alcohol]" UpdateCommand="UPDATE [Alcohol] SET [AlcoholName] = @AlcoholName, [ContentORProof] = @ContentORProof, [Color] = @Color, [CocktailUse] = @CocktailUse, [TypeOfDrunk] = @TypeOfDrunk, [AvgPrice] = @AvgPrice WHERE [AlcoholID] = @AlcoholID">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:alcohol %>" DeleteCommand="DELETE FROM [Alcohol] WHERE [AlcoholID] = @AlcoholID" InsertCommand="INSERT INTO [Alcohol] ([AlcoholName], [ContentORProof], [Color], [CocktailUse], [TypeOfDrunk], [AvgPrice]) VALUES (@AlcoholName, @ContentORProof, @Color, @CocktailUse, @TypeOfDrunk, @AvgPrice)" SelectCommand="SELECT * FROM [Alcohol] WHERE ([AlcoholID] = @AlcoholID)" UpdateCommand="UPDATE [Alcohol] SET [AlcoholName] = @AlcoholName, [ContentORProof] = @ContentORProof, [Color] = @Color, [CocktailUse] = @CocktailUse, [TypeOfDrunk] = @TypeOfDrunk, [AvgPrice] = @AvgPrice WHERE [AlcoholID] = @AlcoholID">
         <DeleteParameters>
             <asp:Parameter Name="AlcoholID" Type="Int32" />
         </DeleteParameters>
@@ -20,6 +20,9 @@
             <asp:Parameter Name="TypeOfDrunk" Type="String" />
             <asp:Parameter Name="AvgPrice" Type="Double" />
         </InsertParameters>
+        <SelectParameters>
+            <asp:QueryStringParameter Name="AlcoholID" QueryStringField="AlcoholID" Type="Int32" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="AlcoholName" Type="String" />
             <asp:Parameter Name="ContentORProof" Type="Double" />
@@ -44,11 +47,11 @@
          CssClass="cssgridview">
         <Fields>
             <asp:BoundField DataField="AlcoholName" HeaderText="Alcohol Name" SortExpression="AlcoholName" />
-            <asp:BoundField DataField="ContentORProof" HeaderText="Content of Alcohol (in %)" SortExpression="ContentORProof" />
+            <asp:BoundField DataField="ContentORProof" HeaderText="Alcohol Content (in %)" SortExpression="ContentORProof" />
             <asp:BoundField DataField="Color" HeaderText="Color" SortExpression="Color" />
             <asp:BoundField DataField="CocktailUse" HeaderText="Cocktail Use" SortExpression="CocktailUse" />
             <asp:BoundField DataField="TypeOfDrunk" HeaderText="Type Of Drunk" SortExpression="TypeOfDrunk" />
-            <asp:BoundField DataField="AvgPrice" HeaderText="Avg Price(in U.S. dollars)" SortExpression="AvgPrice" />
+            <asp:BoundField DataField="AvgPrice" HeaderText="Avg Price (in U.S. Dollars)" SortExpression="AvgPrice" />
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
         </Fields>
     </asp:DetailsView>
