@@ -1,0 +1,50 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+   
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+     <link rel="stylesheet" type="text/css" href="StyleSheethw6.css" />
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+ <div id="container">
+        <div id="header">
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/image/images.jpeg" />
+            <h1>Alcohol</h1>
+            Today's Date: <asp:Label ID="datelb" runat="server"></asp:Label>
+            </div>
+
+
+        <div id="main">
+            <div id="Menu">
+    
+
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" >
+            </asp:Menu>
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" showstartingnode="false"/>
+    
+
+        </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+
+        <div id="footer">
+
+           &copy; Jacqueline Onystok 2013
+        </div>
+
+     </div>
+    </form>
+</body>
+</html>
